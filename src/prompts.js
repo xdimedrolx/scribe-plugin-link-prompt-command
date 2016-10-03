@@ -12,7 +12,7 @@ define([], function() {
     },
     {
       // For tel numbers check for + and numerical values
-      regexp: /\+?\d+/,
+      regexp: /^\+?\d+$/,
       message: 'The URL you entered appears to be a telephone number. ' +
                 'Do you want to add the required “tel:” prefix?',
       action: function(link) {

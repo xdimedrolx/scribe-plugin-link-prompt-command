@@ -18,8 +18,10 @@ describe('Generic links', function() {
 
   describe('add http protocol', function() {
     it('if user agrees', function() {
-      var result = prompts.process(fakeAgreeableWindow, 'www.example.com');
-      assert.equal(result, 'http://www.example.com');
+      ['www.example.com', 'www.example.com/posts/12345678'].forEach(function(exampleUrl) {
+        var result = prompts.process(fakeAgreeableWindow, exampleUrl);
+        assert.equal(result, 'http://' + exampleUrl);
+      });
     });
 
     it('but not if the user disagrees', function() {
